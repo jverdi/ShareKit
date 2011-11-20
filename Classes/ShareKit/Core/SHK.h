@@ -122,7 +122,7 @@
 
 @end
 
-
+NSString * SHKLocalizedStringFormat(NSString* key);
 NSString * SHKStringOrBlank(NSString * value);
 NSString * SHKEncode(NSString * value);
 NSString * SHKEncodeURL(NSURL * value);
