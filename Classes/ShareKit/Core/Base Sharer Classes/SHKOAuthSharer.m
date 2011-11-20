@@ -144,7 +144,7 @@
 {	
 	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@?oauth_token=%@", authorizeURL.absoluteString, requestToken.key]];
 	
-	SHKOAuthView *auth = [[SHKOAuthView alloc] initWithURL:url delegate:self];
+	SHKOAuthView *auth = [[SHKOAuthView alloc] initWithURL:(id)url delegate:self];
 	[[SHK currentHelper] showViewController:auth];	
 	[auth release];
 }
