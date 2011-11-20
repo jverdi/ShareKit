@@ -201,9 +201,9 @@ static NSString *const kSHKFacebookUserInfo =@"kSHKFacebookUserInfo";
 {			
  	if (![self validateItem])
 		return NO;
-    
-    _dialogWasCancelled = NO;
-    
+
+        _dialogWasCancelled = NO;
+
 	NSMutableDictionary *params = [NSMutableDictionary dictionary];
 	NSString *actions = [NSString stringWithFormat:@"{\"name\":\"%@ %@\",\"link\":\"%@\"}",
 				SHKLocalizedString(@"Get"), SHKCONFIG(appName), SHKCONFIG(appURL)];
@@ -289,8 +289,8 @@ static NSString *const kSHKFacebookUserInfo =@"kSHKFacebookUserInfo";
     [SHKFacebook flushAccessToken];
     [self authorize];
   }
-  if ([[url absoluteString] isEqualToString:kFBCancelURL]) {
-    _dialogWasCancelled = YES;      
+  if( [[url absoluteString] isEqualToString:kFBCancelURL] ) {
+    _dialogWasCancelled = YES;
   }
 }
 
