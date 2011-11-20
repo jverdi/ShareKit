@@ -254,7 +254,7 @@ static NSString *const kFBCancelURL = @"fbconnect://success#_=_";
 - (void)dialogDidComplete:(FBDialog *)dialog
 {
   if(_dialogWasCancelled) {
-    [self sendDidFinish];  
+    [self sendDidCancel];  
   }
   else {
     [self sendDidFinish];
