@@ -3,4 +3,4 @@
 	url = https://github.com/jverdi/facebook-ios-sdk.git
 [submodule "Submodules/OAuth"]
 	path = Submodules/OAuth
-	url = https://github.com/rentzsch/OAuthConsumer.git
+	url = https://github.com/jverdi/OAuthConsumer.git
