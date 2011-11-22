@@ -32,6 +32,7 @@ static NSString *const kSHKStoredItemKey=@"kSHKStoredItem";
 static NSString *const kSHKFacebookAccessTokenKey=@"kSHKFacebookAccessToken";
 static NSString *const kSHKFacebookExpiryDateKey=@"kSHKFacebookExpiryDate";
 static NSString *const kFBCancelURL = @"fbconnect://success#_=_";
+static NSString *const kSHKFacebookUserInfo =@"kSHKFacebookUserInfo";
 
 @interface SHKFacebook()
 
@@ -68,6 +69,7 @@ static NSString *const kFBCancelURL = @"fbconnect://success#_=_";
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   [defaults removeObjectForKey:kSHKFacebookAccessTokenKey];
   [defaults removeObjectForKey:kSHKFacebookExpiryDateKey];
+  [defaults removeObjectForKey:kSHKFacebookUserInfo];
   [defaults synchronize];
 }
 
@@ -138,6 +140,11 @@ static NSString *const kFBCancelURL = @"fbconnect://success#_=_";
 + (BOOL)canShareOffline
 {
 	return NO; // TODO - would love to make this work
+}
+
++ (BOOL)canGetUserInfo
+{
+    return YES;
 }
 
 #pragma mark -
@@ -237,7 +244,13 @@ static NSString *const kFBCancelURL = @"fbconnect://success#_=_";
 									   andHttpMethod:@"POST"
 										 andDelegate:self];
 		return YES;
-	} 
+	}
+    else if (item.shareType == SHKShareTypeUserInfo)
+    {
+        [self setQuiet:YES];
+        [[SHKFacebook facebook] requestWithGraphPath:@"me" andDelegate:self];
+        return YES;
+    } 
 	else 
 		// There is nothing to send
 		return NO;
@@ -330,7 +343,13 @@ static NSString *const kFBCancelURL = @"fbconnect://success#_=_";
 
 - (void)request:(FBRequest *)request didLoad:(id)result
 {
-  [self sendDidFinish];
+    NSLog(@"result: %@", [result description]);
+    
+    if ([result objectForKey:@"username"]){        
+        [[NSUserDefaults standardUserDefaults] setObject:result forKey:kSHKFacebookUserInfo];
+    }     
+
+    [self sendDidFinish];
 }
 
 - (void)request:(FBRequest*)aRequest didFailWithError:(NSError*)error 
