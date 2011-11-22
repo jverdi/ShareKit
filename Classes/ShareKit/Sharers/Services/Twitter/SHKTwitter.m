@@ -498,7 +498,39 @@ static NSString *const kSHKTwitterUserInfo=@"kSHKTwitterUserInfo";
 	
 	else
 	{		
-		[self handleUnsuccessfulTicket:data];
+		if (SHKDebugShowLogs)
+			SHKLog(@"Twitter Send Status Error: %@", [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]);
+		
+		// CREDIT: Oliver Drobnik
+		
+		NSString *string = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];		
+		
+		// in case our makeshift parsing does not yield an error message
+		NSString *errorMessage = @"Unknown Error";		
+		
+		NSScanner *scanner = [NSScanner scannerWithString:string];
+		
+		// skip until error message
+		[scanner scanUpToString:@"\"error\":\"" intoString:nil];
+		
+		
+		if ([scanner scanString:@"\"error\":\"" intoString:nil])
+		{
+			// get the message until the closing double quotes
+			[scanner scanUpToCharactersFromSet:[NSCharacterSet characterSetWithCharactersInString:@"\""] intoString:&errorMessage];
+		}
+		
+		
+		// this is the error message for revoked access
+		if ([errorMessage isEqualToString:@"Invalid / used nonce"] || [errorMessage isEqualToString:@"Could not authenticate with OAuth."])
+		{
+			[self sendDidFailShouldRelogin];
+		}
+		else 
+		{
+			NSError *error = [NSError errorWithDomain:@"Twitter" code:2 userInfo:[NSDictionary dictionaryWithObject:errorMessage forKey:NSLocalizedDescriptionKey]];
+			[self sendDidFailWithError:error];
+		}
 	}
 }
 

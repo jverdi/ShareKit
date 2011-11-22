@@ -109,10 +109,13 @@
 		7AC22D3B14580A2000126878 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC22D2014580A2000126878 /* Facebook.m */; };
 		7AC22D3C14580A2000126878 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC22D2314580A2000126878 /* FBLoginDialog.m */; };
 		7AC22D3D14580A2000126878 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC22D2514580A2000126878 /* FBDialog.m */; };
+<<<<<<< HEAD
 		7ABFECFA145181D60012BA77 /* SHKFacebookForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABFECF9145181D60012BA77 /* SHKFacebookForm.m */; };
 		7A8930FD1459697500A2EE10 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8930FC1459697500A2EE10 /* JSONKit.m */; };
 		AAACE01B13CCB1F500A2118F /* DefaultSHKConfigurationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAACE01613CCB1F500A2118F /* DefaultSHKConfigurationDelegate.m */; };
 		AAACE01C13CCB1F500A2118F /* LegacySHKConfigurationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAACE01813CCB1F500A2118F /* LegacySHKConfigurationDelegate.m */; };
+=======
+>>>>>>> 08344e02c7106b5aaa65b09fdb49103fa711f281
 		90E765A61418F2480026B656 /* ShareKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 90E765A51418F2480026B656 /* ShareKit.bundle */; };
 		AAACE01B13CCB1F500A2118F /* DefaultSHKConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = AAACE01613CCB1F500A2118F /* DefaultSHKConfigurator.m */; };
 		AAACE01C13CCB1F500A2118F /* LegacySHKConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = AAACE01813CCB1F500A2118F /* LegacySHKConfigurator.m */; };
@@ -328,10 +331,13 @@
 		7AC22D3014580A2000126878 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		7AC22D3114580A2000126878 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		7AC22D3214580A2000126878 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		7ABFECF8145181D60012BA77 /* SHKFacebookForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKFacebookForm.h; sourceTree = "<group>"; };
 		7ABFECF9145181D60012BA77 /* SHKFacebookForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKFacebookForm.m; sourceTree = "<group>"; };
 		7A8930FB1459697500A2EE10 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = Submodules/JSONKit/JSONKit.h; sourceTree = SOURCE_ROOT; };
 		7A8930FC1459697500A2EE10 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = Submodules/JSONKit/JSONKit.m; sourceTree = SOURCE_ROOT; };
+=======
+>>>>>>> 08344e02c7106b5aaa65b09fdb49103fa711f281
 		8D1107310486CEB800E47090 /* ShareKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShareKit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		90E765A51418F2480026B656 /* ShareKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareKit.bundle; sourceTree = "<group>"; };
 		AAACE01513CCB1F500A2118F /* DefaultSHKConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultSHKConfigurator.h; sourceTree = "<group>"; };
@@ -1183,7 +1189,10 @@
 				7AC22D3C14580A2000126878 /* FBLoginDialog.m in Sources */,
 				7AC22D3D14580A2000126878 /* FBDialog.m in Sources */,
 				7ABFECFA145181D60012BA77 /* SHKFacebookForm.m in Sources */,
+<<<<<<< HEAD
 				7A8930FD1459697500A2EE10 /* JSONKit.m in Sources */,
+=======
+>>>>>>> 08344e02c7106b5aaa65b09fdb49103fa711f281
 				7A3C61EB14751DE500C47D14 /* SHKiOS5Twitter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

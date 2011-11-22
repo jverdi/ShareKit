@@ -266,12 +266,12 @@ static NSString *const kSHKFacebookUserInfo =@"kSHKFacebookUserInfo";
 
 - (void)dialogDidComplete:(FBDialog *)dialog
 {
-    if(_dialogWasCancelled) {
-        [self sendDidCancel];
-    }
-    else {
-        [self sendDidFinish];
-    }
+  if(_dialogWasCancelled) {
+    [self sendDidCancel];  
+  }
+  else {
+    [self sendDidFinish];
+  }
 }
 
 - (void)dialogDidNotComplete:(FBDialog *)dialog
