@@ -4,6 +4,3 @@
 [submodule "JSONKit"]
 	path = Submodules/JSONKit
 	url = git://github.com/johnezang/JSONKit.git
-[submodule "Submodules/OAuth"]
-	path = Submodules/OAuth
-	url = https://github.com/jverdi/OAuthConsumer.git
